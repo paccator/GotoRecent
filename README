@@ -1,0 +1,4 @@
+Sublime Text 2 plugin that adds a panel to reopen recently closed files (bound under ctrl+e/super+e).
+
+To install just clone the repository to a new folder under Packages/ in your Sublime Text 2 configuration folder.
+
