@@ -21,10 +21,14 @@ class GotoRecentCommand(sublime_plugin.WindowCommand):
 
   def selected(self, index):
     if index >= 0:
-      current_file = self.window.active_view().file_name()
-      target_file  = self.recent_files[index][1]
-      self.unshift(current_file)
+      target_file = self.recent_files[index][1]
+      
+      if self.window.active_view():
+        current_file = self.window.active_view().file_name()
+        self.unshift(current_file)
+
       self.window.open_file(target_file)
+
     self.enabled = True
 
   def run(self, file_name=None):
